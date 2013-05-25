@@ -3,6 +3,37 @@
   <head>
     <title>multi page doc</title>
     <link rel="stylesheet" href="experiment.css">
+    <script type="text/javascript">
+      function getElementsByClass(searchClass,node,tag) {
+        var classElements = new Array();
+        if (node == null) node = document;
+        if (tag == null) tag = '*';
+        var els = node.getElementsByTagName(tag);
+        var elsLen = els.length;
+        var pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)");
+        for (i = 0, j = 0; i < elsLen; i++) {
+          if (pattern.test(els[i].className) ) {
+            classElements[j] = els[i];
+            j++;
+          }
+        }
+        return classElements;
+      }
+
+      function selectStansa(n)
+      {
+        var s = getElementsByClass("hideable",null,null);
+        for (var i =0; i < s.length; i++){
+          s[i].className="hideable invisable";
+        }
+        document.getElementById("stansa"+n).className="hideable visable";
+      }
+      window.onload = function()
+      {
+        selectStansa(1);
+      }
+    </script>
+
   </head>
   <body>
     <div id=wrapper>
@@ -12,59 +43,72 @@
       </div>
       
       <div id="main">
-	<pre>
-	  <a name="stansa1" class="hideable">
+	  <a name="stansa1" id="stansa1" class="hideable">
+          <pre>
 	    `Twas brillig, and the slithy toves
 	    Did gyre and gimble in the wabe:
 	    All mimsy were the borogoves,
 	    And the mome raths outgrabe.
+          </pre>
 	  </a>
-	  <a name="stansa2" class="hideable">
+	  <a name="stansa2" id="stansa2" class="hideable">
+           <pre>
 	    “Beware the Jabberwock, my son!
 	    The jaws that bite, the claws that catch!
 	    Beware the Jubjub bird, and shun
 	    The frumious Bandersnatch!;”
+ </pre>
 	  </a>
-	  <a name="stansa3" class="hideable">
+	  <a name="stansa3" id="stansa3" class="hideable">
+ <pre>
 	    He took his vorpal sword in hand:
 	    Long time the manxome foe he sought --
 	    So rested he by the Tumtum tree,
 	    And stood awhile in thought.
+ </pre>
 	  </a>
-	  <a name="stansa4" class="hideable">
+	  <a name="stansa4" id="stansa4" class="hideable">
+ <pre>
 	    And, as in uffish thought he stood,
 	    The Jabberwock, with eyes of flame,
 	    Came whiffling through the tulgey wood,
 	    And burbled as it came!
+ </pre>
 	  </a>
-	  <a name="stansa5" class="hideable">
+	  <a name="stansa5" id="stansa5" class="hideable">
+ <pre>
 	    One, two! One, two! And through and through
 	    The vorpal blade went snicker-snack!
 	    He left it dead, and with its head
 	    He went galumphing back.
+ </pre>
 	  </a>
-	  <a name="stansa6" class="hideable">
+	  <a name="stansa6" id="stansa6" class="hideable">
+ <pre>
 	    “And, has thou slain the Jabberwock?
 	    Come to my arms, my beamish boy!
 	    O frabjous day! Callooh! Callay!'
 	    He chortled in his joy.
+ </pre>
 	  </a>
-	  <a name="stansa7" class="hideable">
+	  <a name="stansa7" id="stansa7" class="hideable">
+ <pre>
 	    `Twas brillig, and the slithy toves
 	    Did gyre and gimble in the wabe;
 	    All mimsy were the borogoves,
 	    And the mome raths outgrabe. 
+ </pre>
 	  </a>
 	</pre>
       </div>
       <div id="footer">
-	<a href="#stansa1"><button>stansa 1</button></a>
-	<a href="#stansa2"><button>stansa 2</button></a>
-	<a href="#stansa3"><button>stansa 3</button></a>
-	<a href="#stansa4"><button>stansa 4</button></a>
-	<a href="#stansa5"><button>stansa 5</button></a>
-	<a href="#stansa6"><button>stansa 6</button></a>
-	<a href="#stansa7"><button>stansa 7</button></a>
+	<a href="#stansa1"><button onclick="selectStansa(1)">stansa 1</button></a>
+	<a href="#stansa2"><button onclick="selectStansa(2)">stansa 2</button></a>
+	<a href="#stansa3"><button onclick="selectStansa(3)">stansa 3</button></a>
+	<a href="#stansa4"><button onclick="selectStansa(4)">stansa 4</button></a>
+	<a href="#stansa5"><button onclick="selectStansa(5)">stansa 5</button></a>
+	<a href="#stansa6"><button onclick="selectStansa(6)">stansa 6</button></a>
+	<a href="#stansa7"><button onclick="selectStansa(7)">stansa 7</button></a>
       </div>
     </div>
 </body> </html>
