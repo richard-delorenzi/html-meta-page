@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/*css style sheet*/
+
+/*width height*/ 
+p, blockquote, li, dd, dt {
+   max-width:40em;
+} 
+
+/*font*/
+body {
+    font-family: serif, "Arial Unicode MS"; /* broken ie6 */
+} 
+
+
+
+
+/*headings*/
+h1 {
+    text-align: center;
+    font-variant:small-caps;
+}
+h1,h2,h3,h4,h5,h6 {
+    text-transform:capitalize;
+    font-family:sans-serif;
+}
+
+
+
+
+
+
+
+*[onclick] {
+    cursor: pointer;
+}
+
+*:target { color : red }
+
+/*hidden*/
+.invisable { display: none; }
+
+#wrapper { 
+  position:relative;
+  text-align:left;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+#header, #footer { 
+  z-index:100;
+  background-color: #fff;
+  width: 100%;
+}
+
+#header {
+  top: 0;
+  position: fixed;
+}
+
+#main {
+  top: 4em;
+  position: absolute;
+  z-index:0
+}
+
+#footer { 
+ position: fixed;
+ bottom: 0;
+}
+
