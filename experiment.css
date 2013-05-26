@@ -11,9 +11,6 @@ body {
     font-family: serif, "Arial Unicode MS"; /* broken ie6 */
 } 
 
-
-
-
 /*headings*/
 h1 {
     text-align: center;
@@ -25,16 +22,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-
-
-
-
-
 *[onclick] {
     cursor: pointer;
 }
 
-*:target { zzcolor : red; }
+*:target { color : red; }
 
 /*hidden*/
 .invisable { display: none; }
@@ -48,23 +40,30 @@ h1,h2,h3,h4,h5,h6 {
 
 #header, #footer { 
   z-index:100;
-  background-color: #fff;
+  zzbackground-color: #fff;
   width: 100%;
 }
 
 #header {
+  display: table-row;
   top: 0;
   position: fixed;
 }
 
-#main {
-  top: 4em;
-  position: absolute;
-  z-index:0
+#wrapper {
+ 
 }
 
-#footer { 
- position: fixed;
- bottom: 0;
+#main {
+  display: table-row;
+  top: 4em; 
+  position: absolute;
+  z-index:0;
+}
+
+#footer {
+  display: table-row; 
+  position: fixed;
+  bottom: 0;
 }
 
